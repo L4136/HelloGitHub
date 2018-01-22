@@ -15,7 +15,7 @@ namespace Task2
 
             int number = 0;
 
-            /*
+            /* SWITCH toteutus
             if (int.TryParse(line, out number))
             {
                 switch (number)
