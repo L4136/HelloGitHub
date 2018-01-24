@@ -4,42 +4,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kapselointi
+namespace TestTank
 {
-    class Car
+    class Tank
     {
         // properties
         public string Name { get; set; }
+        private string name;
         public string Type { get; set; }
-        public int CrewCount { get; set; }
-        public float Speed { get; set; }
-        public readonly float SpeedMax = 100; 
+        private string type;
+        private int CrewCount
+        {
+            get
+            {
+                return crewcount;
+            }
+            set
+            {
+                if (value >= 2 && value <= 6) crewcount = value;
+                else Console.WriteLine ("Value not within limit (2-6).");
+            }
+        }
+        private int crewcount;
+        private float Speed
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                if (value >= 0 && value <= SpeedMax) speed = value;
+                else if (value > SpeedMax) speed = SpeedMax;
+                else speed = 0;
+              
+            }
+        }
+        private float speed = 0;
+        private readonly float SpeedMax = 100;
+        
 
         // don't create any constructor, so default one will be used
 
         // method to give more speed
-        public void AccelerateTo()
+        public void AccelerateTo(float userInput)
         {
-            Speed += 5;
+            
+            if (userInput > Speed) Speed = userInput;
+            Console.WriteLine("Accelerate to: " + Speed);
         }
 
         // method to slow down
-        public void BrakeTo()
+        public void BrakeTo(float userInput)
         {
-            Speed -= 5;
+            
+            if (userInput < Speed) Speed = userInput;
+            Console.WriteLine("Brake to: " + Speed);
         }
-
-        // method to display car data
-        public void PrintData()
-        {
-            Console.WriteLine("Car data : ");
-            Console.WriteLine("- model : " + Model);
-            Console.WriteLine("- color : " + Color);
-            Console.WriteLine("- engine : " + Engine);
-            Console.WriteLine("- speed : " + Speed);
-            Console.WriteLine("- fuzzy dices : " + FuzzyDices);
-            Console.WriteLine("- door count : " + DoorCount);
-        }
+        
 
     }
 

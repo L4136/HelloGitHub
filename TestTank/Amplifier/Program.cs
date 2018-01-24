@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestTank
+namespace Amplifier
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Tank panssarivaunu = new Tank();
-            panssarivaunu.AccelerateTo(90);
+            Vahvistin vahvari = new Vahvistin();
+            while (true)
+            {
+                vahvari.ChangeVolume();
+            }
 
-            panssarivaunu.BrakeTo(1000);
-            
         }
     }
 }
