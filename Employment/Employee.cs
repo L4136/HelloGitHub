@@ -20,7 +20,7 @@ namespace Employment
         // return Person data as a one string, override Object class ToString()-method
         public override string ToString()
         {
-            return "- Name: "+ Name + " Profession: " + Profession + " Salary: " +Salary  ;
+            return   "- Name: "+ Name + " Profession: " + Profession + " Salary: " +Salary  ;
         }
     }
 }

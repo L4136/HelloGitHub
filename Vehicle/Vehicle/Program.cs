@@ -35,8 +35,15 @@ namespace Vehicle
             {
                 Console.WriteLine(bike.ToString());
             }
-            
 
+            List<Boat> boats = new List<Boat>();
+            boats.Add(new Boat("Suvi", "S900", 1990, "White", 4, "Rowboat"));
+            boats.Add(new Boat("Yamaha", "Model 1000", 2010, "yellow", 5, "Motorboat"));
+
+            foreach (Boat boat in boats)
+            {
+                Console.WriteLine(boat.ToString());
+            }
             // create a Boat Object
             /*Boat boat = new Boat();
             boat.Name = "Suvi";
