@@ -17,18 +17,19 @@ namespace JAMK.IT
                 string line;
                 string myfile = @"D:\L4136\testi.txt";
                 //luodaan tiedosto
-                StreamWriter sw = new StreamWriter(myfile);
-
-                //kysytään käyttäjältä nimet ja kirjoitetaan nimet tiedostoon
-                do
+                using (StreamWriter sw = new StreamWriter(myfile))
                 {
-                    Console.WriteLine("Anna henkilön nimi (tyhjä lopettaa)");
-                    line = Console.ReadLine();
-                    if (line.Length > 0)
-                        sw.WriteLine(line);
-                } while (line.Length > 0);
-                sw.Close();
 
+                    //kysytään käyttäjältä nimet ja kirjoitetaan nimet tiedostoon
+                    do
+                    {
+                        Console.WriteLine("Anna henkilön nimi (tyhjä lopettaa)");
+                        line = Console.ReadLine();
+                        if (line.Length > 0)
+                            sw.WriteLine(line);
+                    } while (line.Length > 0);
+                    // sw.Close();  tätä ei tarvita, jos käyttää usingia.
+                }
                 //avataan tiedosto lukua varten 
                 if (File.Exists(myfile))
                 {
